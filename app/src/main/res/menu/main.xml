@@ -15,6 +15,6 @@
     <item
         android:id="@+id/action_test"
         android:orderInCategory="100"
-        android:title="Test"
+        android:title="Date"
         app:showAsAction="always" />
 </menu>

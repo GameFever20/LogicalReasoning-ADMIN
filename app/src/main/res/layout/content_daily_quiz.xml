@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="app.reasoning.logical.admin.quiz.craftystudio.logicalreasoning_admin.DailyQuizActivity"
+    tools:showIn="@layout/activity_daily_quiz">
+
+    <LinearLayout
+        android:id="@+id/main_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello! add Daily Lr  "
+            android:textColor="@color/colorAccent" />
+
+
+        <EditText
+            android:id="@+id/daily_admin_question_name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Question Name " />
+
+        <EditText
+            android:id="@+id/daily_admin_question_optiona_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option A" />
+
+
+        <EditText
+            android:id="@+id/daily_admin_question_optionb_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option B" />
+
+        <EditText
+            android:id="@+id/daily_admin_question_optionc_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option C" />
+
+
+        <EditText
+            android:id="@+id/daily_admin_question_optiond_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Option D" />
+
+
+        <EditText
+            android:id="@+id/daily_admin_question_correctanswer_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correct Answer" />
+
+        <EditText
+            android:id="@+id/daily_admin_question_explaination_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Explaination" />
+
+
+        <EditText
+            android:id="@+id/daily_admin_question_previousYears_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Previous Years" />
+
+        <TextView
+            android:id="@+id/daily_admin_question_topic_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Topic Name"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/daily_admin_question_test_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Date Name"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent"
+            android:onClick="uploadQuestions"
+            android:text="upload Question"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

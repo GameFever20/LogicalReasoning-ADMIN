@@ -3,6 +3,7 @@ package app.reasoning.logical.admin.quiz.craftystudio.logicalreasoning_admin;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -484,8 +485,11 @@ public class MainActivity extends AppCompatActivity
             getNameFromDialog(1);
 
         } else if (id == R.id.action_test) {
-            getNameFromDialog(2);
+            // getNameFromDialog(2);
 
+
+            Intent intent = new Intent(MainActivity.this, DailyQuizActivity.class);
+            startActivity(intent);
         }
 
 

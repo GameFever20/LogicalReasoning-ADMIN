@@ -63,6 +63,74 @@ public class FireBaseHandler {
 
     }
 
+    public void downloadDateList(int limit, final OnTestSerieslistener onTestSerieslistener) {
+
+
+        mDatabaseRef = mFirebaseDatabase.getReference().child("Date/");
+
+        Query myref2 = mDatabaseRef.orderByKey().limitToLast(limit);
+
+        myref2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<String> dateArrayList = new ArrayList<String>();
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                    String date = snapshot.getValue(String.class);
+                    if (date != null) {
+                        dateArrayList.add(date);
+
+                    }
+                }
+
+                Collections.reverse(dateArrayList);
+
+                onTestSerieslistener.onTestListDownLoad(dateArrayList, true);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                onTestSerieslistener.onTestListDownLoad(null, false);
+
+            }
+        });
+
+
+    }
+
+
+    public void uploadDate(final String date, final OnTestSerieslistener onTestSerieslistener) {
+
+
+        mDatabaseRef = mFirebaseDatabase.getReference().child("Date/");
+
+
+        DatabaseReference mDatabaseRef1 = mFirebaseDatabase.getReference().child("Date/" + mDatabaseRef.push().getKey());
+
+
+        mDatabaseRef1.setValue(date).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                onTestSerieslistener.onTestDownLoad(date, true);
+                onTestSerieslistener.onTestUpload(true);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("Failed to Upload Story", e.getMessage());
+
+                onTestSerieslistener.onTestUpload(false);
+                onTestSerieslistener.onTestDownLoad(null, false);
+            }
+        });
+
+
+    }
+
+
     public void uploadQuestion(final Questions questions, final OnQuestionlistener onQuestionlistener) {
 
 
